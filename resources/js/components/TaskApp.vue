@@ -128,4 +128,7 @@ export default {
 ul {
     list-style-type: none;
 }
+input[type="checkbox"] {
+    cursor: pointer;
+}
 </style>
