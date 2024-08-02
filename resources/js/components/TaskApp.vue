@@ -26,7 +26,10 @@
                 </button>
                 <!-- Display all tasks if showAll is true -->
                 <ul v-if="showAll" class="list-group">
-                    <h4>Completed Tasks</h4>
+                    <h4 v-if="tasks.length > 0">Completed Tasks</h4>
+                    <li v-if="tasks.length === 0" class="list-group-item">
+                        No tasks found.
+                    </li>
                     <li v-for="task in tasks" :key="task.id" class="list-group-item d-flex justify-content-between align-items-center">
                         <div>
                             <input type="checkbox" :checked="task.is_completed" @change="toggleTask(task.id, task.is_completed)" class="form-check-input me-2" />
